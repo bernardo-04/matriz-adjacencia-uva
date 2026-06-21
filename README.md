@@ -1,4 +1,4 @@
-# Grafo - Representação por Matriz de Adjacência em C
+# Matriz de Adjacência em C
 
 Este projeto consiste em uma implementação interativa em linguagem **C** para manipulação e visualização de grafos não direcionados utilizando a representação de **Matriz de Adjacência**. 
 
