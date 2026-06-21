@@ -8,7 +8,7 @@ int num_vertices;
 
 void limparGrafo() {
     for (int i = 0; i < num_vertices; i++) {
-        for (int j = 0; j < num_vertices; i++) {
+        for (int j = 0; j < num_vertices; j++) {
             graph[i][j] = 0;
         }
     }
@@ -53,10 +53,19 @@ void modificaAresta() {
     printf("\nOpcao: ");
     scanf("%d", &valor);
 
-    graph[origem][destino] = valor;
-    graph[destino][origem] = valor;
-
-    printf("Aresta atualizada com sucesso");
+    if (valor == 1) {
+        graph[origem][destino] = 1;
+        graph[destino][origem] = 1;
+        printf("Aresta adicionada com sucesso\n");
+    }
+    else if (valor == 2) {
+        graph[origem][destino] = 0;
+        graph[destino][origem] = 0;
+        printf("Aresta removida com sucesso\n");
+    }
+    else {
+        printf("Opcao invalida\n");
+    }
 }
 
 void calcularGrau() {
@@ -67,7 +76,7 @@ void calcularGrau() {
     for (int i = 0; i < num_vertices; i++) {
         grau = 0;
 
-        for (int j = 0; i < num_vertices; j++) {
+        for (int j = 0; j < num_vertices; j++) {
             grau += graph[i][j];
         }
 
@@ -79,18 +88,18 @@ void listarAdjacencias() {
     printf("\nLISTA DE ADJACENCIAS\n");
 
     for (int i = 0; i < num_vertices; i++) {
-        printf("%d", i);
+        printf("%d: ", i);
         int vazio = 1;
 
         for (int j = 0; j < num_vertices; j++) {
             if (graph[i][j] == 1) {
-                printf("%d", j);
+                printf("%d ", j);
                 vazio = 0;
             }
         }
 
         if (vazio == 1) {
-            printf("Nenhum");
+            printf("Nenhum vizinho");
         }
 
         printf("\n");
@@ -117,7 +126,7 @@ int main() {
         printf("2- Inserir/Remover aresta\n");
         printf("3- Mostrar matriz\n");
         printf("4- Mostrar graus\n");
-        printf("5- Mostrar adjacencias");
+        printf("5- Mostrar adjacencias\n");
         printf("6- Sair\n");
 
         printf("Opcao: ");
