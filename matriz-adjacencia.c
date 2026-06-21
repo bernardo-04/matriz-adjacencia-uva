@@ -112,7 +112,6 @@ void limparTela() {
     system("clear");
 #endif
 }
-
 void pausar() {
     printf("\nPressione Enter para continuar...");
     int c;
@@ -137,14 +136,14 @@ int main() {
 
     do
     {
-        limparTela();
-        printf("================ MENU DO GRAFO ================\n");
+        printf("\n================ MENU DO GRAFO ================\n");
         printf(" 1- Limpar grafo\n");
         printf(" 2- Inserir/Remover aresta\n");
         printf(" 3- Mostrar matriz\n");
         printf(" 4- Mostrar graus\n");
         printf(" 5- Mostrar adjacencias\n");
-        printf(" 6- Sair\n");
+        printf(" 6- Limpar tela\n");
+        printf(" 7- Sair\n");
         printf("===============================================\n");
 
         printf("Opcao: ");
@@ -153,41 +152,37 @@ int main() {
         switch (opcao)
         {
         case 1:
-            limparTela();
             limparGrafo();
             pausar();
             break;
         case 2:
-            limparTela();
             modificaAresta();
             pausar();
             break;
         case 3:
-            limparTela();
             imprimirMatriz();
             pausar();
             break;
         case 4:
-            limparTela();
             calcularGrau();
             pausar();
             break;
         case 5:
-            limparTela();
             listarAdjacencias();
             pausar();
             break;
         case 6:
             limparTela();
+            break;
+        case 7:
             printf("\nFim do programa\n");
             break;
         default:
-            limparTela();
             printf("\nOpcao invalida\n");
             pausar();
             break;
         }
 
-    } while (opcao != 6);
+    } while (opcao != 7);
     return 0;
 }

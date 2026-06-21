@@ -2,7 +2,7 @@
 
 Este projeto consiste em uma implementação interativa em linguagem **C** para manipulação e visualização de grafos não direcionados utilizando a representação de **Matriz de Adjacência**. 
 
-O programa conta com uma interface no console limpa e organizada, prevenindo o acúmulo de saídas antigas no terminal.
+O programa conta com um menu interativo no console, permitindo que você acompanhe o histórico de comandos digitados e limpe a tela sob demanda.
 
 ---
 
@@ -10,10 +10,12 @@ O programa conta com uma interface no console limpa e organizada, prevenindo o a
 
 O programa oferece um menu completo para gerenciamento de grafos:
 1. **Limpar Grafo**: Zera todas as conexões atuais do grafo.
-2. **Inserir/Remover Aresta**: Adiciona (`1`) ou remove (`0`) conexões entre vértices de forma não direcionada.
-3. **Mostrar Matriz**: Imprime a matriz de adjacência formatada com cabeçalhos de linhas e colunas.
-4. **Mostrar Graus**: Calcula e exibe o grau (quantidade de conexões) de cada vértice.
+2. **Inserir/Remover Aresta**: Adiciona ou remove conexões de forma não direcionada.
+3. **Mostrar Matriz**: Imprime a matriz de adjacência formatada com cabeçalhos.
+4. **Mostrar Graus**: Calcula e exibe o grau de cada vértice.
 5. **Mostrar Adjacências**: Lista os vizinhos de cada vértice de maneira legível.
+6. **Limpar Tela**: Limpa o terminal manualmente para organizar a exibição.
+7. **Sair**: Encerra a execução do programa.
 
 ---
 
