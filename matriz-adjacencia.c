@@ -105,29 +105,47 @@ void listarAdjacencias() {
         printf("\n");
     }
 }
+void limparTela() {
+#ifdef _WIN32
+    system("cls");
+#else
+    system("clear");
+#endif
+}
+
+void pausar() {
+    printf("\nPressione Enter para continuar...");
+    int c;
+    while ((c = getchar()) != '\n' && c != EOF);
+    getchar();
+}
 
 int main() {
     int opcao;
 
+    limparTela();
     printf("Quantidade de vertices: ");
     scanf("%d", &num_vertices);
 
     if (num_vertices < 0 || num_vertices > MAX_VERTICES) {
-        printf("\nQuantidade de vertices invalida");
+        printf("\nQuantidade de vertices invalida\n");
         return 1;
     }
 
     limparGrafo();
+    pausar();
 
     do
     {
-        printf("MENU DO GRAFO\n");
-        printf("1- Limpar grafo\n");
-        printf("2- Inserir/Remover aresta\n");
-        printf("3- Mostrar matriz\n");
-        printf("4- Mostrar graus\n");
-        printf("5- Mostrar adjacencias\n");
-        printf("6- Sair\n");
+        limparTela();
+        printf("================ MENU DO GRAFO ================\n");
+        printf(" 1- Limpar grafo\n");
+        printf(" 2- Inserir/Remover aresta\n");
+        printf(" 3- Mostrar matriz\n");
+        printf(" 4- Mostrar graus\n");
+        printf(" 5- Mostrar adjacencias\n");
+        printf(" 6- Sair\n");
+        printf("===============================================\n");
 
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -135,25 +153,38 @@ int main() {
         switch (opcao)
         {
         case 1:
+            limparTela();
             limparGrafo();
+            pausar();
             break;
         case 2:
+            limparTela();
             modificaAresta();
+            pausar();
             break;
         case 3:
+            limparTela();
             imprimirMatriz();
+            pausar();
             break;
         case 4:
+            limparTela();
             calcularGrau();
+            pausar();
             break;
         case 5:
+            limparTela();
             listarAdjacencias();
+            pausar();
             break;
         case 6:
+            limparTela();
             printf("\nFim do programa\n");
             break;
         default:
+            limparTela();
             printf("\nOpcao invalida\n");
+            pausar();
             break;
         }
 
